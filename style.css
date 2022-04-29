@@ -1,0 +1,75 @@
+body {
+  background-color: #000;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lock {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 5px solid #f71515;
+  transition: all 0.8s;
+  cursor: pointer;
+}
+
+.lock::after {
+  position: absolute;
+  content: " ";
+  width: 30px;
+  height: 50px;
+  border-radius: 40%;
+  border: 8px solid #250b0b;
+  top: -30px;
+  left: 2px;
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+.lock .key {
+  width: 16px;
+  height: 8px;
+  background-color: #250b0b;
+  margin: 10px auto 0px;
+  border-radius: 15px;
+  transition: all 0.8s;
+}
+
+.lock::before {
+  position: absolute;
+  content: "Lock";
+  text-align: center;
+  font-size: 8px;
+  font-weight: bolder;
+  color: #f71515;
+  letter-spacing: 2px;
+  left: 13px;
+  top: 5px;
+}
+
+.unlock {
+  border: 5px solid #00d42e !important;
+}
+
+.unlock::after {
+  border: 8px solid #00d42e;
+  border-right: 5px solid transparent !important;
+}
+
+.unlock .key {
+  transform: rotate(-90deg);
+  background-color: #00d42e;
+}
+
+.unlock::before {
+  content: "Unlock";
+  color: #00d42e;
+  left: 8px;
+}
